@@ -3,9 +3,9 @@
 namespace Goodwong\LaravelDingtalk\Services;
 
 use Closure;
-use Goodwong\LaravelDingtalk\Exception;
-use Goodwong\LaravelDingtalk\InvalidAccessTokenException;
-use Goodwong\LaravelDingtalk\SystemBusyException;
+use Goodwong\LaravelDingtalk\Exceptions\Exception;
+use Goodwong\LaravelDingtalk\Exceptions\InvalidAccessTokenException;
+use Goodwong\LaravelDingtalk\Exceptions\SystemBusyException;
 use GuzzleHttp\Client as GuzzleClient;
 
 class Api
@@ -94,10 +94,10 @@ class Api
      */
     public function __construct($config)
     {
-        $this->corpid = mixed_get($config, 'corpid');
-        $this->corpsecret = mixed_get($config, 'corpsecret');
-        $this->agentid = mixed_get($config, 'agentid');
-        $this->access_token = mixed_get($config, 'access_token');
+        $this->corpid = data_get($config, 'corpid');
+        $this->corpsecret = data_get($config, 'corpsecret');
+        $this->agentid = data_get($config, 'agentid');
+        $this->access_token = data_get($config, 'access_token');
 
         $this->client = new GuzzleClient();
     }
@@ -191,7 +191,7 @@ class Api
                 $query = $query + $data;
                 $data = null;
             }
-            $url = url_make($url, ['query' => $query]);
+            $url = url_build($url, ['query' => $query]);
 
             if ($method == 'post') {
                 $data = json_encode($data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);

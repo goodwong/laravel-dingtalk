@@ -5,8 +5,8 @@ namespace Goodwong\LaravelDingtalk\Services;
 use Log;
 use Cache;
 use Goodwong\LaravelDingtalk\Services\Api;
-use Goodwong\LaravelDingtalk\Services\Exception;
-use Goodwong\LaravelDingtalk\Services\InvalidAccessTokenException;
+use Goodwong\LaravelDingtalk\Exceptions\Exception;
+use Goodwong\LaravelDingtalk\Exceptions\InvalidAccessTokenException;
 
 /**
  * Api Service
