@@ -5,7 +5,7 @@ namespace Goodwong\LaravelDingtalk\Handlers;
 use Goodwong\LaravelDingtalk\Events\DingtalkUserCreated;
 use Goodwong\LaravelDingtalk\Repositories\DingtalkUserRepository;
 
-class CreateDingtalkUserHandler
+class DingtalkHandler
 {
     /**
      * construct

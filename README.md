@@ -32,7 +32,7 @@ Laravel钉钉基础模块，提供钉钉用户资料模型及配置信息
 
 1. 创建钉钉用户
     ```php
-    $creator = app('Goodwong\LaravelDingtalk\Handlers\CreateDingtalkUserHandler');
+    $creator = app('Goodwong\LaravelDingtalk\Handlers\DingtalkHandler');
     $dingtalkUser = $creator->create($attributes);
     ```
 
