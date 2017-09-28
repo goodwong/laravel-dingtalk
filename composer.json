@@ -19,5 +19,12 @@
         "psr-4": {
             "Goodwong\\LaravelDingtalk\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Goodwong\\LaravelDingtalk\\DingtalkServiceProvider"
+            ]
+        }
     }
 }
