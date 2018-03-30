@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk\Repositories;
+namespace Goodwong\Dingtalk\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 
@@ -13,7 +13,7 @@ class DingtalkUserRepository extends BaseRepository
      */
     function model()
     {
-        return \Goodwong\LaravelDingtalk\Entities\DingtalkUser::class;
+        return \Goodwong\Dingtalk\Entities\DingtalkUser::class;
     }
 
     /**

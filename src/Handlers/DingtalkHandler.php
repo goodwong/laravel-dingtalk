@@ -1,9 +1,9 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk\Handlers;
+namespace Goodwong\Dingtalk\Handlers;
 
-use Goodwong\LaravelDingtalk\Events\DingtalkUserCreated;
-use Goodwong\LaravelDingtalk\Repositories\DingtalkUserRepository;
+use Goodwong\Dingtalk\Events\DingtalkUserCreated;
+use Goodwong\Dingtalk\Repositories\DingtalkUserRepository;
 
 class DingtalkHandler
 {

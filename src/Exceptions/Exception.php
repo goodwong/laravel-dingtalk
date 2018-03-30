@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk\Exceptions;
+namespace Goodwong\Dingtalk\Exceptions;
 
 use Exception as Base;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk\Services;
+namespace Goodwong\Dingtalk\Services;
 
 use Closure;
-use Goodwong\LaravelDingtalk\Exceptions\Exception;
-use Goodwong\LaravelDingtalk\Exceptions\InvalidAccessTokenException;
-use Goodwong\LaravelDingtalk\Exceptions\SystemBusyException;
+use Goodwong\Dingtalk\Exceptions\Exception;
+use Goodwong\Dingtalk\Exceptions\InvalidAccessTokenException;
+use Goodwong\Dingtalk\Exceptions\SystemBusyException;
 use GuzzleHttp\Client as GuzzleClient;
 
 class Api

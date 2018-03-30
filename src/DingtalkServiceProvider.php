@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk;
+namespace Goodwong\Dingtalk;
 
 use Illuminate\Support\ServiceProvider;
 

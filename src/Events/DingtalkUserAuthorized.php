@@ -1,8 +1,8 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk\Events;
+namespace Goodwong\Dingtalk\Events;
 
-use Goodwong\LaravelDingtalk\Entities\DingtalkUser;
+use Goodwong\Dingtalk\Entities\DingtalkUser;
 use Illuminate\Queue\SerializesModels;
 
 class DingtalkUserAuthorized

@@ -17,13 +17,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Goodwong\\LaravelDingtalk\\": "src/"
+            "Goodwong\\Dingtalk\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Goodwong\\LaravelDingtalk\\DingtalkServiceProvider"
+                "Goodwong\\Dingtalk\\DingtalkServiceProvider"
             ]
         }
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk\Exceptions;
+namespace Goodwong\Dingtalk\Exceptions;
 
-use Goodwong\LaravelDingtalk\Exceptions\Exception;
+use Goodwong\Dingtalk\Exceptions\Exception;
 
 class SystemBusyException extends Exception
 {

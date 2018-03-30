@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodwong\LaravelDingtalk\Entities;
+namespace Goodwong\Dingtalk\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
