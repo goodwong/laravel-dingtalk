@@ -34,7 +34,7 @@ class Api
      * 基础接口
      */
      // 获取access_token
-    const API_ACCESS_TOKEN          = 'https://oapi.dingtalk.com/gettoken?corpid=CORPID&corpsecret=CORPSECRET';
+    const API_ACCESS_TOKEN          = 'https://oapi.dingtalk.com/gettoken?appkey=key&appsecret=secret';
      // 获取 jsapi_ticket
     const API_JSAPI_TICKET          = 'https://oapi.dingtalk.com/get_jsapi_ticket?access_token=ACCESS_TOKE';
 
@@ -66,11 +66,18 @@ class Api
     public $corpid;
 
     /**
-     * CorpSecret
+     * appkey
      *
      * @var string
      */
-    public $corpsecret;
+    public $appkey;
+
+    /**
+     * appsecret
+     *
+     * @var string
+     */
+    public $appsecret;
 
     /**
      * AgentId
@@ -89,14 +96,15 @@ class Api
     /**
      * create Api instance
      *
-     * @param  mixed  $config ----> corpid, corpsecret, agentid[, access_token]
+     * @param  mixed  $config ----> corpid, agentid, appkey, appsecret[, access_token]
      * @return Api
      */
     public function __construct($config)
     {
         $this->corpid = data_get($config, 'corpid');
-        $this->corpsecret = data_get($config, 'corpsecret');
         $this->agentid = data_get($config, 'agentid');
+        $this->appkey = data_get($config, 'appkey');
+        $this->appsecret = data_get($config, 'appsecret');
         $this->access_token = data_get($config, 'access_token');
 
         $this->client = new GuzzleClient();
@@ -105,15 +113,15 @@ class Api
     /**
      * get access_token
      *
-     * @param  string  $corpid [optional]
-     * @param  string  $corpsecret [optional]
+     * @param  string  $appkey [optional]
+     * @param  string  $appsecret [optional]
      * @return string
      */
-    public function getAccessToken($corpid = null, $corpsecret = null)
+    public function getAccessToken($appkey = null, $appsecret = null)
     {
-        $corpid = $corpid ?: $this->corpid;
-        $corpsecret = $corpsecret ?: $this->corpsecret;
-        $params = ['corpid' => $corpid, 'corpsecret' => $corpsecret];
+        $appkey = $appkey ?: $this->appkey;
+        $appsecret = $appsecret ?: $this->appsecret;
+        $params = ['appkey' => $appkey, 'appsecret' => $appsecret];
         $result =  $this->request('GET', self::API_ACCESS_TOKEN, $params);
         $this->access_token = $result->access_token;
         return $result;

@@ -35,7 +35,8 @@ class DingtalkService
     {
         $this->agentid = config('dingtalk.agent_id');
         $this->corpid = config('dingtalk.corp_id');
-        $this->corpsecret = config('dingtalk.corp_secret');
+        $this->appkey = config('dingtalk.app_key');
+        $this->appsecret = config('dingtalk.app_secret');
     }
 
     /**
@@ -115,7 +116,8 @@ class DingtalkService
             $this->api = new Api([
                 'agentid' => $this->agentid,
                 'corpid' => $this->corpid,
-                'corpsecret' => $this->corpsecret,
+                'appkey' => $this->appkey,
+                'appsecret' => $this->appsecret,
                 'access_token' => $access_token,
             ]);
         }
@@ -178,8 +180,8 @@ class DingtalkService
     {
         $jsapi_ticket = $this->getJsapiTicket();
 
-        $agentId = $this->agentid;
-        $corpId = $this->corpid;
+        $agentId = (string)$this->agentid;
+        $corpId = (string)$this->corpid;
         $timeStamp = (string)time();
         $nonceStr = md5(rand(100000, 999999) . time());
         $signature = sha1("jsapi_ticket={$jsapi_ticket}&noncestr={$nonceStr}&timestamp={$timeStamp}&url={$url}");
@@ -211,7 +213,7 @@ class DingtalkService
         if ( ! $this->corpid) {
             return false;
         }
-        if ( ! $this->corpsecret) {
+        if ( ! $this->appsecret) {
             return false;
         }
         if ( ! $this->agentid) {
